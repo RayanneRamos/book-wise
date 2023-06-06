@@ -1,5 +1,5 @@
 import { Heading, Text } from "@/components/Typography";
-import { AuthButtons } from "@/components/authButtons";
+import { AuthButtons } from "@/components/AuthButtons";
 import { LoginContainer, LogoSection, WelcomeSection } from "@/styles/pages/login";
 
 export default function Login() {
