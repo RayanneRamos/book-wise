@@ -53,7 +53,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { ratings, ...bookInfo } = book
 
     return {
-      ...book,
+      ...bookInfo,
       ratings: ratings.length,
       avgRating: bookAvgRating?._avg.rate,
       alreadyRead: userBooksIds.includes(book.id)

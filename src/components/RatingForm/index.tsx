@@ -7,7 +7,7 @@ import { FormEvent, useState } from "react"
 import { TextArea } from "../ui/Form/TextArea"
 import { ActionIcon } from "../ui/ActionIcon"
 import { Check, X } from "@phosphor-icons/react"
-import { useMutation } from "@tanstack/react-query"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { api } from "@/lib/axios"
 
 type RatingFormProps = {
@@ -21,11 +21,18 @@ export const RatingForm = ({ onCancel, bookId }: RatingFormProps) => {
   const [ currentRate, setcurrentRate ] = useState(0)
   const [ description, setDescription ] = useState('')
   const submitDisabled = !description.trim() || !currentRate
+  const queryClient = useQueryClient()
   const { mutateAsync: handleRate } = useMutation(async () => {
     await api.post(`/books/${bookId}/rate`, {
       description,
       rate: currentRate,
     })
+  }, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(['book', bookId])
+      queryClient.invalidateQueries(['books'])
+      onCancel()
+    }
   })
   
   async function handleSubmit(event: FormEvent) {
