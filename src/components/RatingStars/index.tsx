@@ -28,7 +28,7 @@ export const RatingStars = ({ rating, size = 'sm', setRating, ...props }: Rating
 
   function handleSetValue() {
     if (isEditable) {
-      setRating(previewValue)
+      setRating(ratingValue)
     }
   }
   

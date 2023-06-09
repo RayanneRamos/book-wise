@@ -27,7 +27,7 @@ export const LoginDialog = ({ children }: LoginDialogProps) => {
           </DialogClose>
           <div>
             <Heading size='xs' color='gray-200' css={{ marginBottom: 40 }}>Faça login para deixar sua avaliação</Heading>
-            <AuthButtons callbackUrl={!!paramBookId ? `explore?book=${paramBookId}` : '/explore'} />
+            <AuthButtons callbackUrl={!!paramBookId ? `/explorer?book=${paramBookId}` : '/explorer'} />
           </div>
         </DialogContent>
       </Dialog.Portal>

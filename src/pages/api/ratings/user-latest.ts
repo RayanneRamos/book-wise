@@ -16,7 +16,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
 
   const latestUserRating = await prisma.rating.findFirst({
     where: {
-      user_id: String(session.user.id),
+      user_id: String(session?.user?.id),
     },
     orderBy: {
       created_at: "desc"

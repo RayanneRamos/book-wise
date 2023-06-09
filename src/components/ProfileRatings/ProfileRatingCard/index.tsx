@@ -17,7 +17,7 @@ export const ProfileRatingCard = ({ rating }: ProfileRatingCardProps) => {
       <Text size='sm' color='gray-300'>{distance}</Text>
       <CardContent>
         <BookDetails>
-          <Link style={{ display: 'flex' }} href={`/explore?book=${rating.book_id}`}>
+          <Link style={{ display: 'flex' }} href={`/explorer?book=${rating.book_id}`}>
             <BookImage src={rating.book.cover_url} alt={rating.book.name} width={98} height={134} />
           </Link>
           <section>

@@ -22,7 +22,7 @@ export const BookCard = ({ book, size = 'md' }: BookCardProps) => {
     },
     lg: {
       width: 108,
-      height: 151,
+      height: 152,
     }
   }
   const currentSize = IMAGES_SIZES[size]

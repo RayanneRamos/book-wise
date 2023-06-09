@@ -15,7 +15,7 @@ export const ProfileDetails = ({ profile }: ProfileDetailsProps) => {
   return (
     <Container>
       <UserInfo>
-        <Avatar size='lg' alt={profile.user.name} src={profile.user.avatar_url} />
+        <Avatar size='lg' alt={profile.user.name} src={profile.user.avatar_url!} />
         <Heading size='md' css={{ marginTop: 20 }}>{profile.user.name}</Heading>
         <Text size='md' color='gray-400'>membro desde {memberSinceYear}</Text>
       </UserInfo>

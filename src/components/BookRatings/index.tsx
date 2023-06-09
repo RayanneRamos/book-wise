@@ -15,10 +15,10 @@ type BookRatingsProps = {
 export const BookRatings = ({ ratings, bookId }: BookRatingsProps) => {
   const { status, data: session } = useSession()
   const  [ showForm, setShowForm ] = useState(false)
+  const isAuthenticated = status === 'authenticated'
   const sortedRatingsByDate = ratings.sort((a, b) => {
     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   })
-  const isAuthenticated = status === 'authenticated'
   const canRate = ratings.every(x => x.user_id !== session?.user?.id)
   const RatingWrapper = isAuthenticated ? Fragment : LoginDialog
   

@@ -17,7 +17,7 @@ type BookDetails = BookWithAvgRating & {
   ratings: RatingWithAuthor[]
   categories: (CategoriesOnBooks & {
     category: Category
-  })
+  })[]
 }
 
 type RatingsDialogProps = {
@@ -32,7 +32,7 @@ export const RatingsDialog = ({ children, bookId }: RatingsDialogProps) => {
   
   const { data: book } = useQuery<BookDetails>(['book', bookId], async () => {
     const { data } = await api.get(`/books/details/${bookId}`)
-    return data?.book ?? {}
+    return data.book ?? {}
   }, {
     enabled: open,
   })
@@ -47,9 +47,9 @@ export const RatingsDialog = ({ children, bookId }: RatingsDialogProps) => {
 
   function onOpenChange(open: boolean) {
     if (open) {
-      router.push(`/explore?book=${bookId}`, undefined, { shallow: true })
+      router.push(`/explorer?book=${bookId}`, undefined, { shallow: true })
     } else {
-      router.push('/explore', undefined, { shallow: true })
+      router.push('/explorer', undefined, { shallow: true })
     }
 
     setOpen(open)
@@ -92,7 +92,7 @@ export const RatingsDialog = ({ children, bookId }: RatingsDialogProps) => {
                     <BookInfo icon={<BookOpen />} title='Páginas' info={String(book.total_pages)} />
                   </BookInfos>
                 </BookDetailsWrapper>
-              <BookRatings ratings={book.ratings} book={bookId} />
+              <BookRatings ratings={book.ratings} bookId={bookId} />
             </>
           ) }
         </DialogContent>

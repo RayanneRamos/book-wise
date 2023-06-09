@@ -18,7 +18,7 @@ export type ProfileRating = Rating & {
 
 type ProfileRatingsProps = {
   ratings: ProfileRating[]
-  isOwnProfile: boolean
+  isOwnProfile?: boolean
 }
 
 export const ProfileRatings = ({ ratings, isOwnProfile }: ProfileRatingsProps) => {
@@ -50,9 +50,11 @@ export const ProfileRatings = ({ ratings, isOwnProfile }: ProfileRatingsProps) =
           )
         })}
         { filteredRatings.length <= 0 && (
-          <Text color='gray-400' css={{ textAlign: 'center' }}>
-            { search ? 'Nenhum livro encontrado' : 'Nenhuma avaliação encontrada'}
-          </Text>
+          <>
+            <Text color='gray-400' css={{ textAlign: 'center' }}>
+              { search ? 'Nenhum livro encontrado' : 'Nenhuma avaliação encontrada'}
+            </Text>
+          </>
         )}
       </RatingsList>
     </Container>

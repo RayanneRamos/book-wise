@@ -39,13 +39,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       where: {
         ratings: {
           some: {
-            user_id: String(session.user.id)
+            user_id: String(session?.user?.id)
           }
         }
       }
     })
 
-    userBooksIds = userBooks.map((book) => book.id)
+    userBooksIds = userBooks?.map((book) => book?.id)
   }
 
   const booksWithAvgRating = books.map((book) => {
