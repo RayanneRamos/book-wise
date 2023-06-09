@@ -12,7 +12,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     },
     include: {
       book: true,
-      user: true
+      user: true,
     },
     take: 10
   })

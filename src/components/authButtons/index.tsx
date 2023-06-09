@@ -10,10 +10,9 @@ type AuthButtonsProps = {
 export function AuthButtons({ callbackUrl = '/', canGuest }: AuthButtonsProps) {
   const router = useRouter()
 
-
   function handleSignIn(provider?: string) {
     if (!provider) {
-      router.push(callbackUrl)
+      router.push('/')
       return 
     }
     
