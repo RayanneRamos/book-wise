@@ -5,6 +5,7 @@ import { SignIn, SignOut } from "@phosphor-icons/react"
 import { Text } from "../Typography"
 import { Avatar } from "../ui/Avatar"
 import { useRouter } from "next/router"
+import Image from "next/image"
 
 export const Sidebar = () => {
   const { data: session } = useSession()
@@ -18,7 +19,7 @@ export const Sidebar = () => {
   return (
     <Container>
       <div>
-        <img className="logo" src="/images/logo.svg" alt="BookWise Logo" />
+        <Image width={232} height={58} className="logo" src="/images/logo.svg" alt="BookWise Logo" />
         <Navigation />
       </div>
       <footer>
