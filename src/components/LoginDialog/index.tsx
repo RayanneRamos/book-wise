@@ -3,8 +3,8 @@ import { ReactNode } from 'react'
 import { DialogClose, DialogContent, DialogOverlay } from './styles'
 import { X } from '@phosphor-icons/react'
 import { Heading } from '../Typography'
-import { AuthButtons } from '../AuthButtons'
 import { useRouter } from 'next/router'
+import { AuthButtons } from '../AuthButtons'
 
 type LoginDialogProps = {
   children: ReactNode
