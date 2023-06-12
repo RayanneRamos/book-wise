@@ -51,7 +51,7 @@ export const BookDetails = styled('div', {
 })
 
 export const BookImage = styled(Image, {
-  minWidth: 108,
+  minWidth: 108, 
   objectFit: 'cover',
   transition: '0.2s',
 
