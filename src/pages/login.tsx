@@ -1,7 +1,12 @@
 import { Heading, Text } from "@/components/Typography";
-import { AuthButtons } from "@/components/AuthButtons";
-import { LoginContainer, LogoSection, WelcomeSection } from "@/styles/pages/login";
+import { AuthButtons } from "@/components/AuthsButtons";
+import {
+  LoginContainer,
+  LogoSection,
+  WelcomeSection,
+} from "@/styles/pages/login";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Login() {
   return (
@@ -11,13 +16,20 @@ export default function Login() {
         <link rel="shortcut icon" href="/favicon.svg" type="image/svg" />
       </Head>
       <LogoSection>
-        <img src="/images/logo.svg" alt="BookWise Logo" />
+        <Image
+          width={232}
+          height={58}
+          src="/images/logo.svg"
+          alt="BookWise Logo"
+        />
       </LogoSection>
       <WelcomeSection>
-        <Heading size="lg" color="gray-100">Boas vindas!</Heading>
+        <Heading size="lg" color="gray-100">
+          Boas vindas!
+        </Heading>
         <Text color="gray-200">Faça seu login ou acesse como visitante.</Text>
         <AuthButtons canGuest />
       </WelcomeSection>
     </LoginContainer>
-  )
+  );
 }
