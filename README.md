@@ -16,6 +16,13 @@
 
 [Book Wise](https://book-wise-4vaj65mi1-rayanneramos.vercel.app/) é o sexto projeto desenvolvido durante o bootcamp ignite da [Rocketseat](https://www.rocketseat.com.br/) que foca nas tecnologias ReactJS, React Native e NodeJS. Consiste em criar uma aplicação para listar as avaliações mais recentes dos livros, os livros populares permite você avaliar um livro e deixar uma resenha.
 
+## 🌟 Funcionalidades
+
+1. **Listagem de avaliações recentes de livros**
+2. **Avaliação e resenha de livros, permitindo aos usuários compartilhar suas opiniões** 
+3. **Exibição de livros populares, com base nas avaliações e resenhas dos usuários**
+4. **Disponível para Android e iOS, proporcionando uma experiência de leitura e avaliação em dispositivos móveis**
+
 ## 🧪 Technologies
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
