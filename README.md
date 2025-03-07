@@ -23,7 +23,7 @@
 3. **Exibição de livros populares, com base nas avaliações e resenhas dos usuários**
 4. **Disponível para Android e iOS, proporcionando uma experiência de leitura e avaliação em dispositivos móveis**
 
-## 🧪 Technologies
+## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
